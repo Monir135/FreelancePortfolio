@@ -107,7 +107,7 @@ function showError(msg) {
   submitButton.textContent = "Send Message";
 }
 
-
+document.getElementById('year').textContent = new Date().getFullYear();
 
 
 
