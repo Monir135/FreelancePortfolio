@@ -405,11 +405,12 @@ a {
 /* ================= FOOTER ================= */
 footer {
   text-align: center;
-  padding: 2rem;
+  padding: 2rem 1rem 3rem 1rem;
   background: linear-gradient(135deg, #1b8f6a, #0f3d3e);
   color: #fff;
-  margin-top: 2rem;
 }
+
+
 
 
 /* ================= RESPONSIVE ================= */
@@ -510,10 +511,6 @@ footer {
 }
 
 
-footer {
-  padding: 2rem 1rem 3rem 1rem;
-  /* top, sides, bottom */
-}
 
 footer p {
   margin-bottom: 1.5rem;
