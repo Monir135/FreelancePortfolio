@@ -199,6 +199,17 @@ a {
 }
 
 
+.hero-language {
+  margin-top: -0.3rem;
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.95);
+  letter-spacing: 0.25px;
+}
+
+
+
 
 
 /* ================= WHY CHOOSE ME (FINAL) ================= */
@@ -376,6 +387,11 @@ a {
   padding: 0.9rem 2.2rem;
   font-size: 1.05rem;
 }
+
+.final-cta p strong {
+  color: var(--secondary-color);
+}
+
 
 
 /* ================= FOOTER ================= */
