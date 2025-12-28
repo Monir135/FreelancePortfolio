@@ -1,0 +1,751 @@
+/* ================= ROOT VARIABLES ================= */
+:root {
+  --primary-color: #1b8f6a;
+  --secondary-color: #0f3d3e;
+  --accent-color: #e9f7f2;
+  --text-color: #1f2933;
+  --muted-color: #6b7280;
+  --radius: 12px;
+  --transition: 0.3s ease;
+  --shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  --font-primary: 'Poppins', sans-serif;
+
+  /* body text */
+}
+
+/* ================= GLOBAL STYLES ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+
+/* ================= SECTION HEADING (GLOBAL) ================= */
+.section-heading {
+  max-width: 760px;
+  margin: 0 auto 2rem auto;
+  text-align: center;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 1.3;
+  letter-spacing: 0.5px;
+  position: relative;
+  color: var(--secondary-color);
+}
+
+.section-heading::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--primary-color);
+  margin: 0.5rem auto 0 auto;
+  border-radius: var(--radius);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section-heading {
+    font-size: 1.7rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-heading {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-primary);
+  font-weight: 600;
+  letter-spacing: 0.4px;
+}
+
+
+.hero h1 {
+  line-height: 1.2;
+}
+
+.hero p {
+  line-height: 1.6;
+  /* keep as is or slightly bigger */
+}
+
+
+
+button {
+  font-weight: 600;
+  /* bold for CTA buttons */
+}
+
+
+
+body {
+  color: var(--text-color);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Inter', sans-serif;
+  background-color: #eefaf6;
+  /* 3–4% lighter than current */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--secondary-color);
+}
+
+.hero h1 {
+  font-weight: 700;
+}
+
+.about p {
+  font-weight: 500;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.7rem 1.4rem;
+  background-color: var(--primary-color);
+  color: #fff;
+  transition: var(--transition);
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ================= HERO ================= */
+
+.hero {
+  background: linear-gradient(135deg, #1b8f6a, #0f3d3e);
+  color: #fff;
+  text-align: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 3.5rem 2rem;
+}
+
+
+
+.hero .container {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+
+
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 0.8rem;
+}
+
+.hero p {
+  font-size: 1.15rem;
+  margin-bottom: 2rem;
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.hero .buttons button {
+  margin: 0 0.5rem;
+  font-weight: bold;
+  min-width: 150px;
+
+}
+
+.hero .buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+
+
+
+/* ================= WHY CHOOSE ME (FINAL) ================= */
+.why-me {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background: linear-gradient(to right, #e9f7f2, #f0fdf8);
+  /* soft green gradient */
+  border-radius: var(--radius);
+}
+
+
+
+.why-me ul {
+  max-width: 760px;
+  margin: 0 auto;
+  padding-left: 0;
+  list-style: none;
+}
+
+.why-me li {
+  position: relative;
+  padding-left: 1.8rem;
+  margin-bottom: 0.9rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.why-me li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+
+
+
+
+
+/* ================= PROJECTS ================= */
+.projects .project-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem auto 0 auto;
+  max-width: 1200px;
+  /* allow images to stay larger on desktop */
+}
+
+
+
+.projects {
+  padding: 3rem 0;
+  /* Adds top and bottom padding to match other sections */
+}
+
+
+.project {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform var(--transition), box-shadow var(--transition);
+  background-color: #d9f3ec;
+  /* subtle green tint to match theme */
+
+
+  display: flex;
+  flex-direction: column;
+}
+
+.project img {
+  width: 100%;
+  height: auto;       /* keep natural height */
+  display: block;
+  object-fit: contain; /* preserves entire image without cropping */
+  background: #e9f7f2; /* soft background if image is smaller */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+
+
+
+
+
+
+
+.project h3 {
+  margin: 1rem;
+}
+
+.project p {
+  margin: 0 1rem 1rem;
+  color: var(--muted-color);
+  margin-top: auto;
+}
+
+.project .buttons {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 1rem 1rem;
+}
+
+
+
+.project:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ================= ABOUT ================= */
+
+.about-img {
+  width: 250px;
+  /* rectangular width */
+  height: 350px;
+  /* rectangular height */
+  border-radius: 12px;
+  /* soft corners for professional look */
+  display: block;
+  margin: 1.5rem auto 2rem;
+  /* center image with spacing */
+  object-fit: cover;
+  /* fills rectangle nicely without stretching */
+  border: 3px solid var(--primary-color);
+  /* accent border */
+  box-shadow: var(--shadow);
+  /* subtle shadow for depth */
+  transition: transform 0.3s ease;
+  object-position: center top;
+}
+
+.about-img:hover {
+  transform: scale(1.05);
+  /* subtle zoom effect on hover */
+}
+
+
+
+
+/* ================= FINAL CTA (ALIGNED WITH ABOUT ME) ================= */
+.final-cta {
+  padding: 3rem 0;
+  text-align: center;
+  background: linear-gradient(to right, #e9f7f2, #f0fdf8);
+  /* soft green gradient */
+  color: var(--text-color);
+  /* dark text for readability */
+}
+
+
+
+.final-cta .container {
+  max-width: 760px;
+  /* SAME width as About Me */
+  margin: 0 auto;
+}
+
+
+
+/* Paragraph SAME style as About Me */
+.final-cta p {
+  max-width: 760px;
+  margin: 2rem auto;
+  font-size: 1.1rem;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* Button slightly emphasized but consistent */
+.final-cta button {
+  padding: 0.9rem 2.2rem;
+  font-size: 1.05rem;
+}
+
+
+/* ================= FOOTER ================= */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #1b8f6a, #0f3d3e);
+  color: #fff;
+  margin-top: 2rem;
+}
+
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .hero {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 2rem 1.25rem;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+}
+
+
+
+
+
+/* ================= SERVICES ALIGNMENT ================= */
+.services {
+  padding: 3rem 0;
+  /* same top/bottom padding as Projects */
+  text-align: center;
+}
+
+
+.services .service-list {
+  max-width: 760px;
+  /* match Projects */
+  margin: 0 auto;
+  /* center horizontally */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  /* same gap as Projects */
+  margin-top: 2rem;
+}
+
+/* service card styling already good */
+.service {
+  background: linear-gradient(to right, #e9f7f2, #f0fdf8);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.service:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+
+
+/* ================= ABOUT ME ALIGNMENT ================= */
+.about {
+  padding: 3rem 0;
+  /* same top/bottom padding as Services & Projects */
+  text-align: center;
+  /* center heading and paragraph */
+}
+
+
+.about p {
+  max-width: 760px;
+  margin: 2rem auto 2rem auto;
+  /* adds 2rem top and bottom space */
+  font-size: 1.1rem;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+
+
+.final-cta .trust-line {
+  font-size: 0.95rem;
+  color: var(--muted-color);
+  margin-top: 1rem;
+}
+
+@media (max-width: 480px) {
+  .about-img {
+    width: 200px;
+    height: 280px;
+  }
+}
+
+
+footer {
+  padding: 2rem 1rem 3rem 1rem;
+  /* top, sides, bottom */
+}
+
+footer p {
+  margin-bottom: 1.5rem;
+  /* space between text and nav */
+  font-size: 0.95rem;
+}
+
+
+footer .contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  /* remove all margin-top */
+}
+
+
+footer .contact-links a img {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: brightness(0) invert(1);
+}
+
+@media (max-width: 480px) {
+  footer .contact-links a img {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+
+
+footer .contact-links a:hover img {
+  transform: scale(1.2);
+  filter: brightness(0) invert(0.7);
+  /* subtle hover effect */
+}
+
+
+
+
+/* Footer navigation */
+footer .footer-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  column-gap: 2rem;
+  /* horizontal spacing between links */
+  row-gap: 1rem;
+  /* vertical spacing between wrapped rows */
+  margin-bottom: 1.5rem;
+  /* space between nav and contact links */
+}
+
+
+
+footer .footer-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+  position: relative;
+  padding: 0.25rem 0.5rem;
+}
+
+/* Subtle underline on hover to match section headings */
+footer .footer-nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  background: var(--accent-color);
+  border-radius: var(--radius);
+  transition: width 0.3s ease;
+
+  height: 3px;
+  /* match section headings */
+  background: var(--primary-color);
+  /* match headings underline color */
+}
+
+footer .footer-nav a:hover {
+  color: var(--accent-color);
+  transform: scale(1.05);
+}
+
+footer .footer-nav a:hover::after {
+  width: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  footer .footer-nav a {
+    font-size: 0.95rem;
+  }
+}
+
+
+footer .footer-nav a {
+  padding: 0.4rem 0.75rem;
+  /* slightly bigger for better click/tap */
+}
+
+section {
+  scroll-margin-top: 80px;
+}
+
+
+
+
+
+
+/* ================= MODAL OVERLAY ================= */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 61, 62, 0.7);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 9999;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ================= MODAL BOX ================= */
+.modal {
+  background: #fff;
+  border-radius: var(--radius);
+   padding: 3rem 2rem 2rem;
+  /* MORE space at top */
+  width: 90%;
+  max-width: 420px;
+  box-shadow: var(--shadow);
+  position: relative;
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+
+
+.modal-overlay.active .modal {
+  transform: scale(1);
+}
+
+
+
+
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+
+  width: 34px;
+  height: 34px;
+
+  border-radius: 50%;
+  background: #f3f4f6;
+
+  font-size: 1.4rem;
+  color: var(--secondary-color);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+
+}
+
+.modal-close:hover {
+  background: #e5e7eb;
+  transform: scale(1.05);
+}
+
+
+.modal h3 {
+  text-align: center;
+  margin-bottom: 0.6rem;
+  margin-top: 0;
+}
+
+
+
+.modal-subtext {
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--muted-color);
+  margin-bottom: 1.5rem;
+}
+
+/* ================= FORM ================= */
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.modal-form input,
+.modal-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: var(--radius);
+  border: 1px solid #d1d5db;
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+.modal-form textarea {
+  min-height: 110px;
+  resize: none;
+}
+
+.modal-form input:focus,
+.modal-form textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+/* Submit button */
+.modal-form button {
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+
+
+.success-box {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.success-box h3 {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.success-box p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-color); 
+}
+
+
+
+
+
+
+
