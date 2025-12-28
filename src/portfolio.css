@@ -263,11 +263,19 @@ a {
 }
 
 
-
 .projects {
   padding: 3rem 0;
   /* Adds top and bottom padding to match other sections */
 }
+
+/* Mobile fix for projects grid */
+@media (max-width: 480px) {
+  .projects .project-cards {
+    padding: 0 1rem; /* adds left/right spacing */
+    gap: 1rem;       /* slightly reduce gap for small screens */
+  }
+}
+
 
 
 .project {
