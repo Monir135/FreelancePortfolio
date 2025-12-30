@@ -334,7 +334,7 @@ a {
 /* ================= ABOUT ================= */
 
 .about-img {
-  width: 250px;
+  width: 300px;
   /* rectangular width */
   height: 350px;
   /* rectangular height */
@@ -352,6 +352,9 @@ a {
   transition: transform 0.3s ease;
   object-position: center top;
 }
+
+
+
 
 .about-img:hover {
   transform: scale(1.05);
