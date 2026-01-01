@@ -919,7 +919,7 @@ section {
 
   font-size: 1.6rem;
   font-weight: 600;
-  color: #0f172a;
+   color: #f87171; /* light red */
 
   cursor: pointer;
   line-height: 1;
