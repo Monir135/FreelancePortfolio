@@ -796,3 +796,194 @@ section {
 
 
 
+
+
+/* ================= HIRE ME OVERLAY — FINAL & MOBILE SAFE ================= */
+
+.hireme-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem; /* CRITICAL for mobile */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  z-index: 10000;
+}
+
+.hireme-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ================= MODAL ================= */
+
+.hireme-modal {
+  box-sizing: border-box;
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 16px;
+  padding: 2rem 1.8rem;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  transform: translateY(12px);
+  transition: transform 0.25s ease;
+}
+
+.hireme-overlay.active .hireme-modal {
+  transform: translateY(0);
+}
+
+/* ================= HEADER ================= */
+
+.hireme-modal h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.4rem;
+  line-height: 1.3;
+  word-wrap: break-word;
+}
+
+.hireme-modal p {
+  font-size: 0.95rem;
+  color: #475569;
+  margin-bottom: 1.4rem;
+  line-height: 1.4;
+}
+
+/* ================= OPTIONS ================= */
+
+.options-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.options-buttons button {
+  width: 100%;
+  min-height: 46px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  background-color: #ffffff;
+  color: #0f172a;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+/* Primary CTA */
+#hmMessage {
+  background-color: #1b8f6a;
+  color: #ffffff;
+  border: none;
+}
+
+#hmMessage:hover {
+  background-color: #167a5c;
+  transform: translateY(-1px);
+}
+
+/* Secondary buttons */
+.options-buttons button:not(#hmMessage):hover {
+  background-color: #f8fafc;
+  transform: translateY(-1px);
+}
+
+/* ================= CLOSE BUTTON ================= */
+
+/* ================= CLOSE BUTTON (FIXED ALIGNMENT) ================= */
+
+.hireme-close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #f1f5f9;
+  color: #0f172a;
+  font-size: 1.3rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10; /* IMPORTANT */
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.hireme-close:hover {
+  background-color: #e2e8f0;
+  transform: scale(1.05);
+}
+
+
+/* ================= FORM ================= */
+
+.hireme-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.hireme-form input,
+.hireme-form textarea {
+  width: 100%;
+  padding: 0.7rem;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+}
+
+.hireme-form textarea {
+  min-height: 110px;
+  resize: none;
+}
+
+.hireme-form input:focus,
+.hireme-form textarea:focus {
+  outline: none;
+  border-color: #1b8f6a;
+}
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width: 360px) {
+  .hireme-modal {
+    padding: 1.6rem 1.2rem;
+  }
+
+  .hireme-modal h3 {
+    font-size: 1.2rem;
+  }
+
+  .hireme-modal p {
+    font-size: 0.88rem;
+  }
+}
+
+
+
+.hireme-form {
+  position: relative;
+}
+
+
+
+
+
+
+

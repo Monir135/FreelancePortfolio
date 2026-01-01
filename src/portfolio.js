@@ -39,11 +39,7 @@ closeModalBtn.addEventListener("click", () => {
   modalOverlay.classList.remove("active");
 });
 
-modalOverlay.addEventListener("click", (e) => {
-  if (e.target === modalOverlay) {
-    modalOverlay.classList.remove("active");
-  }
-});
+
 
 // ================= FORM SUBMIT =================
 form.addEventListener("submit", async (e) => {
@@ -113,3 +109,79 @@ document.getElementById('year').textContent = new Date().getFullYear();
 
 
 
+
+// ================= HIRE ME OVERLAY (FINAL) =================
+
+// SELECT ELEMENTS
+const hireMeBtn = document.getElementById("heroHireBtn");
+const hireMeOverlay = document.getElementById("hireMeOverlay");
+const hiremeOptions = document.getElementById("hiremeOptions");
+const hiremeClose = document.getElementById("hiremeClose");
+const hmMessageBtn = document.getElementById("hmMessage");
+
+// Open Hire Me overlay
+hireMeBtn.addEventListener("click", () => {
+  hireMeOverlay.classList.add("active");
+  hiremeOptions.style.display = "block";
+});
+
+// Close overlay via ✕
+hiremeClose.addEventListener("click", () => {
+  hireMeOverlay.classList.remove("active");
+});
+
+// Click outside closes overlay
+hireMeOverlay.addEventListener("click", (e) => {
+  if (e.target === hireMeOverlay) {
+    hireMeOverlay.classList.remove("active");
+  }
+});
+
+// Prevent inner clicks from closing overlay
+hireMeOverlay
+  .querySelector(".hireme-modal")
+  .addEventListener("click", (e) => e.stopPropagation());
+
+// Message Me → open CONTACT MODAL
+
+
+
+
+
+
+
+
+
+
+
+let openedFromHireMe = false;
+hmMessageBtn.addEventListener("click", () => {
+  hireMeOverlay.classList.remove("active");   // close Hire Me overlay
+  modalOverlay.classList.add("active");       // open Contact Modal
+
+  openedFromHireMe = true; // ✅ set flag
+
+
+  setTimeout(() => {
+    submitButton.focus();
+  }, 300);
+});
+
+
+function closeModal() {
+  modalOverlay.classList.remove("active");
+  modalContent.innerHTML = originalModalHTML;
+
+  if (openedFromHireMe) {
+    hireMeOverlay.classList.add("active"); // reopen overlay
+    openedFromHireMe = false;              // reset flag
+  }
+}
+
+// Close button
+closeModalBtn.addEventListener("click", closeModal);
+
+// Click outside modal
+modalOverlay.addEventListener("click", (e) => {
+  if (e.target === modalOverlay) closeModal();
+});
