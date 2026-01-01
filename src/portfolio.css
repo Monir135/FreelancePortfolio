@@ -907,27 +907,32 @@ section {
 
 .hireme-close {
   position: absolute;
-  top: 0.5px;
-  right: -1px;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background-color: #f1f5f9;
+  top: 1px;
+  right: 5px;
+
+  background: transparent;     /* ✅ remove background */
+  border: none;                /* ✅ remove border */
+  box-shadow: none;            /* ✅ remove shadow */
+
+  width: auto;
+  height: auto;
+
+  font-size: 1.6rem;
+  font-weight: 600;
   color: #0f172a;
-  font-size: 1.3rem;
-  line-height: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
   cursor: pointer;
-  z-index: 10; /* IMPORTANT */
-  transition: background-color 0.2s ease, transform 0.15s ease;
+  line-height: 1;
+  padding: 0;                  /* ✅ important */
+
+  z-index: 10;
 }
 
+
 .hireme-close:hover {
-  background-color: #e2e8f0;
-  transform: scale(1.05);
+  color: #991b1b;
 }
+
 
 
 /* ================= FORM ================= */
