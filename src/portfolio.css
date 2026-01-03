@@ -21,6 +21,14 @@
   scroll-behavior: smooth;
 }
 
+html, body {
+  /* Font smoothing / clarity */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+
 
 /* ================= SECTION HEADING (GLOBAL) ================= */
 .section-heading {
